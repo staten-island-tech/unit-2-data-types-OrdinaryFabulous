@@ -1,4 +1,4 @@
-# << Contains All Challenge Codes >> # 
+# << Contains All Challenge Codes + MadLib >> # 
 #   1. Using the "input" method in Python, ask a user to input a sentence. Then develop a function that accepts a the user input and will tell you how many words are in that string. First write out your plan in Pseudo-code using comments. Then craft the function. 
 #   2. Mad Libs Project
 #   3. Let's create a function that determines if a number is odd or even
@@ -87,13 +87,28 @@ def bill(billvalue: int):
 def factorout(num):
     factorlist = []
 
+    # << Run through each number from 0 to the number (a number cannot have a factor bigger than the number itself) >> #
     for i in range(1, num + 1):
+
+        # << Check if number divided by the instance (number) has a remainder or not, if it doesn't, it is a factor >> #
         if num % i == 0:
             factorlist.append(i)
 
     print(f"The factors of {num} is {factorlist}")
 
+    # << Return the list >> #
+    return(factorlist)
+
 # << Challenge 5 >> #
 def GCF(x, y):
-    pass
-bill(91234)
+    XFactors = factorout(x)
+    YFactors = factorout(y)
+    GreatestCF = 0
+
+    for factor in XFactors:
+        if factor in YFactors:
+            GreatestCF = max(GreatestCF, factor)
+
+    print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
+
+GCF(10, 100)
