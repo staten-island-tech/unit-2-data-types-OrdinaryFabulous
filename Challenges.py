@@ -22,20 +22,67 @@ def MadLibs():
     print(f"""Today was a boring day. 
 {Name1} {Verb1} to school and sat down in homeroom. 
 Suddenly {Celebrity1} showed up into class, it was a surprise for all the students and they were excited.
-{Name1} did not expect much to happen but then they triped on a {Noun1} and fell down the stairs.
-{Name1} woke up in a hostipial shortly after but {Verb2} away back to school""")
+{Name1} did not expect much to happen but then they triped on a {Noun1} and fell down the stairs and broke their neck.
+{Name1} woke up in a hostipial shortly after but {Verb2} back to school""")
     
 # << Challenge 2 >> #
-def odd(num):
+def odd(num: int):
     if num%2 == 0:
         print("This number is even")
     else:
         print("This number is odd")
 
 # << Challenge 3 >> #
-def bill():
-    pass
+def bill(billvalue: int):
+    SRating = ["bad", "okay", "good", "great"]
+    GRating = False
 
+    ServiceRating = input(f"Your Current Bill is: ${billvalue}. How was the service? Input Bad, Okay, Good, or Great: ")
+    if ServiceRating in SRating:
+        GRating = True
+
+    while not GRating:
+        ServiceRating = input(f"Please input a valid rating of 'Bad', 'Okay', 'Good', or 'Great' only. ")
+        if ServiceRating.lower() in SRating:
+            GRating = True
+    
+    Confirmation = False
+
+    while not Confirmation:
+        if ServiceRating.lower() == "bad":
+            print(f"Your total bill will be ${billvalue}")
+            Confirmation = True
+
+        elif ServiceRating.lower() == "okay":
+            Confirm = input(f"Your current bill is {billvalue}, would you like to add a tip of 15%? (Total will be ${billvalue * 1.15})")
+
+            if Confirm.lower() != "yes" and Confirm.lower() != "no":
+                Confirm = input(f"Please Input A Valid Answer (Yes and No Only)")
+            elif Confirm.lower() == "yes":
+                print(f"Your total will be {billvalue * 1.15}")
+            elif Confirm.lower() == "no":
+                print(f"Your total will be ${billvalue}")
+
+        elif ServiceRating.lower() == "good":
+            Confirm = input(f"Your current bill is {billvalue}, would you like to add a tip of 15%? (Total will be ${billvalue * 1.20})")
+
+            if Confirm.lower() != "yes" and Confirm.lower() != "no":
+                Confirm = input(f"Please Input A Valid Answer (Yes and No Only)")
+            elif Confirm.lower() == "yes":
+                print(f"Your total will be {billvalue * 1.20}")
+            elif Confirm.lower() == "no":
+                print(f"Your total will be ${billvalue}")
+
+        elif ServiceRating.lower() == "great":
+            Confirm = input(f"Your current bill is {billvalue}, would you like to add a tip of 15%? (Total will be ${billvalue * 1.25})")
+
+            if Confirm.lower() != "yes" and Confirm.lower() != "no":
+                Confirm = input(f"Please Input A Valid Answer (Yes and No Only)")
+            elif Confirm.lower() == "yes":
+                print(f"Your total will be {billvalue * 1.25}")
+            elif Confirm.lower() == "no":
+                print(f"Your total will be ${billvalue}")
+                
 # << Challenge 4 >> #
 def factorout(num):
     factorlist = []
@@ -49,5 +96,4 @@ def factorout(num):
 # << Challenge 5 >> #
 def GCF(x, y):
     pass
-
-MadLibs()
+bill(91234)
