@@ -111,4 +111,4 @@ def GCF(x, y):
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
 
-GCF(10, 100)
+GCF(345214567344535, 57543536575235)
