@@ -110,5 +110,3 @@ def GCF(x, y):
             GreatestCF = max(GreatestCF, factor)
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
-
-GCF(43, 353)
