@@ -38,7 +38,7 @@ def bill(billvalue: int):
     GRating = False
 
     ServiceRating = input(f"Your Current Bill is: ${billvalue}. How was the service? Input Bad, Okay, Good, or Great: ")
-    if ServiceRating in SRating:
+    if ServiceRating.lower() in SRating:
         GRating = True
 
     while not GRating:
@@ -54,37 +54,53 @@ def bill(billvalue: int):
             Confirmation = True
 
         elif ServiceRating.lower() == "okay":
-            Confirm = input(f"Your current bill is {billvalue}, would you like to add a tip of 15%? (Total will be ${billvalue * 1.15})")
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.15)}) ")      
+            
+            while not Confirmation:
+                if Confirm.lower() == "yes":
+                    print(f"Your total will be ${round(billvalue * 1.15)}")
+                    Confirmation = True
 
-            if Confirm.lower() != "yes" and Confirm.lower() != "no":
-                Confirm = input(f"Please Input A Valid Answer (Yes and No Only)")
-            elif Confirm.lower() == "yes":
-                print(f"Your total will be {billvalue * 1.15}")
-            elif Confirm.lower() == "no":
-                print(f"Your total will be ${billvalue}")
+                elif Confirm.lower() == "no":
+                    print(f"Your total will be ${billvalue}")
+                    Confirmation = True
+
+                else:
+                    Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
 
         elif ServiceRating.lower() == "good":
-            Confirm = input(f"Your current bill is {billvalue}, would you like to add a tip of 15%? (Total will be ${billvalue * 1.20})")
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.20)}) ")
 
-            if Confirm.lower() != "yes" and Confirm.lower() != "no":
-                Confirm = input(f"Please Input A Valid Answer (Yes and No Only)")
-            elif Confirm.lower() == "yes":
-                print(f"Your total will be {billvalue * 1.20}")
-            elif Confirm.lower() == "no":
-                print(f"Your total will be ${billvalue}")
+            while not Confirmation:
+                if Confirm.lower() == "yes":
+                    print(f"Your total will be ${round(billvalue * 1.20)}")
+                    Confirmation = True
+
+                elif Confirm.lower() == "no":
+                    print(f"Your total will be ${billvalue}")
+                    Confirmation = True
+                else:
+                    Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
+
 
         elif ServiceRating.lower() == "great":
-            Confirm = input(f"Your current bill is {billvalue}, would you like to add a tip of 15%? (Total will be ${billvalue * 1.25})")
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.25)}) ")
 
-            if Confirm.lower() != "yes" and Confirm.lower() != "no":
-                Confirm = input(f"Please Input A Valid Answer (Yes and No Only)")
-            elif Confirm.lower() == "yes":
-                print(f"Your total will be {billvalue * 1.25}")
-            elif Confirm.lower() == "no":
-                print(f"Your total will be ${billvalue}")
+            while not Confirmation:
+                if Confirm.lower() == "yes":
+                    print(f"Your total will be ${round(billvalue * 1.25)}")
+                    Confirmation = True
+
+                elif Confirm.lower() == "no":
+                    print(f"Your total will be ${billvalue}")
+                    Confirmation = True
+                else:
+                    Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
                 
 # << Challenge 4 >> #
 def factorout(num):
+    # << List of factors >> #
+
     factorlist = []
 
     # << Run through each number from 0 to the number (a number cannot have a factor bigger than the number itself) >> #
@@ -92,6 +108,8 @@ def factorout(num):
 
         # << Check if number divided by the instance (number) has a remainder or not, if it doesn't, it is a factor >> #
         if num % i == 0:
+
+            # << Add the number to the list >> #
             factorlist.append(i)
 
     print(f"The factors of {num} is {factorlist}")
@@ -99,10 +117,19 @@ def factorout(num):
     # << Return the list >> #
     return(factorlist)
 
+def factorer(num: int):
+    # << Easier Way Perhaps ? >> #
+    print(f"The factors of {num} is:")
+    for i in range(1, num + 1):
+        if num%i == 0: 
+            print(i)
+
+
 # << Challenge 5 >> #
 def GCF(x, y):
     XFactors = factorout(x)
     YFactors = factorout(y)
+
     GreatestCF = 0
 
     for factor in XFactors:
@@ -110,5 +137,3 @@ def GCF(x, y):
             GreatestCF = max(GreatestCF, factor)
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
-
-GCF(345214567344535, 57543536575235)
