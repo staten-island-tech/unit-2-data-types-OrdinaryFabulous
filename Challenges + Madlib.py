@@ -54,11 +54,11 @@ def bill(billvalue: int):
             Confirmation = True
 
         elif ServiceRating.lower() == "okay":
-            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.15)}) ")      
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.15, 2)}) ")      
             
             while not Confirmation:
                 if Confirm.lower() == "yes":
-                    print(f"Your total will be ${round(billvalue * 1.15)}")
+                    print(f"Your total will be ${round(billvalue * 1.15, 2)}")
                     Confirmation = True
 
                 elif Confirm.lower() == "no":
@@ -69,11 +69,11 @@ def bill(billvalue: int):
                     Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
 
         elif ServiceRating.lower() == "good":
-            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.20)}) ")
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.20, 2)}) ")
 
             while not Confirmation:
                 if Confirm.lower() == "yes":
-                    print(f"Your total will be ${round(billvalue * 1.20)}")
+                    print(f"Your total will be ${round(billvalue * 1.20, 2)}")
                     Confirmation = True
 
                 elif Confirm.lower() == "no":
@@ -84,11 +84,11 @@ def bill(billvalue: int):
 
 
         elif ServiceRating.lower() == "great":
-            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.25)}) ")
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.25, 2)}) ")
 
             while not Confirmation:
                 if Confirm.lower() == "yes":
-                    print(f"Your total will be ${round(billvalue * 1.25)}")
+                    print(f"Your total will be ${round(billvalue * 1.25, 2)}")
                     Confirmation = True
 
                 elif Confirm.lower() == "no":
@@ -98,7 +98,7 @@ def bill(billvalue: int):
                     Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
                 
 # << Challenge 4 >> #
-def factorout(num):
+def factorout(num) -> list:
     # << List of factors >> #
 
     factorlist = []
@@ -120,10 +120,11 @@ def factorout(num):
 def factorer(num: int):
     # << Easier Way Perhaps ? >> #
     print(f"The factors of {num} is:")
+
     for i in range(1, num + 1):
+
         if num%i == 0: 
             print(i)
-
 
 # << Challenge 5 >> #
 def GCF(x, y):
@@ -137,3 +138,8 @@ def GCF(x, y):
             GreatestCF = max(GreatestCF, factor)
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
+
+def a(x):
+    print(x+1)
+    a(x+1)
+a(1)
