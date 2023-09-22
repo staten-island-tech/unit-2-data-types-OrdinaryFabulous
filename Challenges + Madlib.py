@@ -25,32 +25,32 @@ Suddenly {Celebrity1} showed up into class, it was a surprise for all the studen
 {Name1} did not expect much to happen but then they triped on a {Noun1} and fell down the stairs and broke their neck.
 {Name1} woke up in a hostipial shortly after but {Verb2} back to school""")
     
-# << Challenge 2 >> #
-def odd(num: int):
-    if num%2 == 0:
-        print("This number is even")
-    else:
-        print("This number is odd")
-
-# << Challenge 3 >> #
-def bill(billvalue: int):
-    SRating = ["bad", "okay", "good", "great"]
-    GRating = False
-
-    ServiceRating = input(f"Your Current Bill is: ${billvalue}. How was the service? Input Bad, Okay, Good, or Great: ")
-    if ServiceRating.lower() in SRating:
-        GRating = True
-
-    while not GRating:
-        ServiceRating = input(f"Please input a valid rating of 'Bad', 'Okay', 'Good', or 'Great' only. ")
-        if ServiceRating.lower() in SRating:
-            GRating = True
-    
-    Confirmation = False
-
-    while not Confirmation:
-        if ServiceRating.lower() == "bad":
-            print(f"Your total bill will be ${billvalue}")
+# << Challenge 2 >> # 
+def odd(num: int): 
+    if num%2 == 0: 
+        print("This number is even") 
+    else: 
+        print("This number is odd") 
+ 
+# << Challenge 3 >> # 
+def bill(billvalue: int): 
+    SRating = ["bad", "okay", "good", "great"] 
+    GRating = False 
+ 
+    ServiceRating = input(f"Your Current Bill is: ${billvalue}.  How was the service? Input Bad, Okay, Good, or Great: ")
+    if ServiceRating.lower() in SRating: 
+        GRating = True 
+ 
+    while not GRating: 
+        ServiceRating = input(f"Please input a valid rating of  'Bad', 'Okay', 'Good', or 'Great' only. ")
+        if ServiceRating.lower() in SRating: 
+            GRating = True 
+     
+    Confirmation = False 
+ 
+    while not Confirmation: 
+        if ServiceRating.lower() == "bad": 
+            print(f"Your total bill will be ${billvalue}") 
             Confirmation = True
 
         elif ServiceRating.lower() == "okay":
@@ -98,7 +98,7 @@ def bill(billvalue: int):
                     Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
                 
 # << Challenge 4 >> #
-def factorout(num) -> list:
+def factorout(num):
     # << List of factors >> #
 
     factorlist = []
@@ -138,8 +138,3 @@ def GCF(x, y):
             GreatestCF = max(GreatestCF, factor)
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
-
-def a(x):
-    print(x+1)
-    a(x+1)
-a(1)
