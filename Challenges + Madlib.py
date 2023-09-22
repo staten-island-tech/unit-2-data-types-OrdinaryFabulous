@@ -96,7 +96,12 @@ def bill(billvalue: int):
                     Confirmation = True
                 else:
                     Confirm = input(f"Please Input A Valid Answer (Yes and No Only) ")
-                
+
+def tipper(initialbill, tippercent):
+    initialbill = float(initialbill)
+    TipPercent = float(tippercent) / 100
+    print(f"Your total bill is ${initialbill * TipPercent + initialbill}")
+
 # << Challenge 4 >> #
 def factorout(num):
     # << List of factors >> #
@@ -138,3 +143,5 @@ def GCF(x, y):
             GreatestCF = max(GreatestCF, factor)
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
+
+CountWord()
