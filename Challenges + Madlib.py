@@ -1,11 +1,10 @@
 # << Contains All Challenge Codes + MadLib >> # 
-#   1. Using the "input" method in Python, ask a user to input a sentence. Then develop a function that accepts a the user input and will tell you how many words are in that string. First write out your plan in Pseudo-code using comments. Then craft the function. 
+#   1. Using the "input" method in Python, ask a user to input a sentence. Then develop a function that accepts a the user input and will tell you how many words are in that string. First write out your plan in Pseudo-code using comments. Then craft the function.
 #   2. Mad Libs Project
 #   3. Let's create a function that determines if a number is odd or even
-#   4. Let's create a function to accept a "bill" value and offer a tip of 0%, 15%, 20% or 25% depending on if the service was "bad, okay, good , or great ". 
-#   5. Create a function that accepts an input and determines all factors of the number. 
-#   6. Create a function that accepts 2 arguments. Find the greatest common factor between those numbers. 
-
+#   4. Let's create a function to accept a "bill" value and offer a tip of 0%, 15%, 20% or 25% depending on if the service was "bad, okay, good , or great ".
+#   5. Create a function that accepts an input and determines all factors of the number.
+#   6. Create a function that accepts 2 arguments. Find the greatest common factor between those numbers.
 # << Challenge 1 >> #
 def CountWord():
     String = input("Please Input A String: ")
@@ -54,7 +53,7 @@ def bill(billvalue: int):
             Confirmation = True
 
         elif ServiceRating.lower() == "okay":
-            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.15, 2)}) ")      
+            Confirm = input(f"Your current bill is ${billvalue}, would you like to add a tip of 15%? (Total will be ${round(billvalue * 1.15, 2)}) ")
             
             while not Confirmation:
                 if Confirm.lower() == "yes":
@@ -104,6 +103,7 @@ def tipper(initialbill, tippercent):
 
 # << Challenge 4 >> #
 def factorout(num):
+    
     # << List of factors >> #
 
     factorlist = []
@@ -143,5 +143,3 @@ def GCF(x, y):
             GreatestCF = max(GreatestCF, factor)
 
     print(f"The Greatest Common Factor Of {x} and {y} is {GreatestCF}")
-
-CountWord()
